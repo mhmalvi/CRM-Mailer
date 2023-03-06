@@ -1,0 +1,17 @@
+const express = require("express");
+const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
+const router = require('./src/v1/router/router')
+const ejs = require('ejs')
+const path = require('path')
+
+
+const app = express();
+app.use(express.json());
+app.set('view engine', 'ejs')
+// app.use(express.static('public'))
+app.use('/api',router)
+
+app.listen(2000, () => {
+  console.log("running");
+});
