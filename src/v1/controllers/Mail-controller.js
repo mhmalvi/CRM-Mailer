@@ -2,42 +2,54 @@
 const nodemailer = require("nodemailer");
 const path = require("path");
 const ejs = require("ejs");
+// const { exit } = require("process");
 // const attachments = require('attachments')
 // const recipient
 sendMail = async (req, res) => {
-  console.log("controller");
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
       user: "tanjibrubyat@gmail.com",
       pass: "qaaqcvbjgnyrhgrr",
     },
-    // attachments: [
-    //   {
-    //     filename: "image.png",
-    //     path: "../../../public/images/b2cde6d6-a2fa-439a-b06f-1bf93360760f.jpg",
-    //     cid: "unique@nodemailer.com", //same cid value as in the html img src
-    //   },
-    // ],
   });
-  // res.render('mail',{subject:req.body.subject})
-  // console.log(__dirname)
-  const type = req.body.type;
-  const text = req.body.text;
+
+  let type;  
+  const status = req.body.lead_status;
+console.log(status)
+  if (status == 0) {
+    type = "suspended";
+  } else if (status == 1) {
+    type = "new lead";
+  } else if (status == 2) {
+    type = "skilled";
+  } else if (status == 3) {
+    type = "called";
+  } else if (status == 4) {
+    type = "paid";
+  } else if (status == 5) {
+    type = "verified";
+  } else if (status == 6) {
+    type = "completed";
+  } else if (status == 7) {
+    type = "canceled";
+  }
+  console.log(type)
+  // const text = req.body.text;
   const name = req.body.name;
   const student_id = req.body.student_id;
   const lead_id = req.body.lead_id;
-  const payment = req.body.payment;
+  // const payment = req.body.payment;
   let info;
   let file = path.join(__dirname, "../../../views/skilled.ejs");
 
   const data = await ejs.renderFile(file, {
-    text,
+    // text,
     type,
     name,
     student_id,
     lead_id,
-    payment,
+    // payment,
   });
 
   // console.log(data)
