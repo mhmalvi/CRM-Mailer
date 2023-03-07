@@ -53,7 +53,7 @@ console.log(status)
   });
 
   // console.log(data)
-  const recipient = [req.body.to];
+  const recipient = ["megatanjib@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
