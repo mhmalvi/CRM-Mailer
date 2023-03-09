@@ -88,9 +88,6 @@
           display: table !important;
           max-height: none !important;
         }
-        .main-table{
-
-        }
       }
     </style>
   </head>
@@ -471,6 +468,25 @@
                                   >
                                     <strong>Your registration is complete</strong>
                                   </h1>
+                                  <%} else if(type=='called' && response!==""){ %>
+                                    <h1
+                                    style="
+                                      margin: 0;
+                                      color: #555555;
+                                      direction: ltr;
+                                      font-family: Arial, Helvetica Neue,
+                                        Helvetica, sans-serif;
+                                      font-size: 40px;
+                                      font-weight: 400;
+                                      letter-spacing: normal;
+                                      line-height: 120%;
+                                      text-align: center;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <strong>You are called</strong>
+                                  </h1>
                                   <% } else { %>
                                     <h1
                                     style="
@@ -542,7 +558,10 @@
                                           >Hi <%=name%>! <% if(type=="paid"){ %> Thank you for your payment of $<%=payment%>
                                             <%} else if(type=="completed"){ %>
                                                 You will get your certificate shortly
-                                                
+                                              <%} else if(response == 0){ %>
+                                                We haven't found any response from you. Please contact with us.
+                                                <%} else if(response == 1){%>
+                                                  Thank you for your response. Follow the next steps.
                                                 <% } else { %>
                                                 You are <%=type%>
                                                 <%  } %>    
@@ -1148,7 +1167,7 @@
                                           mso-line-height-alt: 14.399999999999999px;
                                         "
                                       >
-                                         
+                                        
                                       </p>
                                     </div>
                                   </div>
@@ -1197,7 +1216,7 @@
                                           mso-line-height-alt: 14.399999999999999px;
                                         "
                                       >
-                                         
+                                        
                                       </p>
                                     </div>
                                   </div>

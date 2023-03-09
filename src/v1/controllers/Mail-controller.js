@@ -14,16 +14,17 @@ sendMail = async (req, res) => {
     },
   });
 
-  let type;  
+  let type;
   const status = req.body.lead_status;
-console.log(status)
+  const response = req.body.response;
+  console.log(response);
   if (status == 0) {
     type = "suspended";
   } else if (status == 1) {
     type = "new lead";
   } else if (status == 2) {
     type = "skilled";
-  } else if (status == 3) {
+  } else if (status == 3 && response !== "") {
     type = "called";
   } else if (status == 4) {
     type = "paid";
@@ -34,7 +35,7 @@ console.log(status)
   } else if (status == 7) {
     type = "canceled";
   }
-  console.log(type)
+  console.log(type);
   // const text = req.body.text;
   const name = req.body.name;
   const student_id = req.body.student_id;
@@ -49,6 +50,7 @@ console.log(status)
     name,
     student_id,
     lead_id,
+    response
     // payment,
   });
 
