@@ -73,8 +73,44 @@ sendMail = async (req, res) => {
   }
 };
 
-getMail = async (req, res) => {
-  res.render("skilled");
-};
+payment_mail = async (req, res) => {
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "tanjibrubyat@gmail.com",
+      pass: "qaaqcvbjgnyrhgrr",
+    },
+  });
 
-module.exports = { sendMail, getMail };
+  let file = path.join(__dirname, "../../../views/payment_complete.ejs");
+
+
+  const data = await ejs.renderFile(file, {
+    // text,
+    // type,
+    // name,
+    // student_id,
+    // lead_id,
+    // response,
+    // payment,
+  });
+  const recipient = ["megatanjib@gmail.com"];
+  for (let i = 0; i < recipient.length; i++) {
+    // console.log(recipient[i])
+    info = await transporter.sendMail({
+      from: "tanjibrubyat@gmail.com",
+      to: recipient[i],
+      subject: req.body.subject,
+      html: data,
+    });
+  }
+
+  if (info) {
+    res.status(200).send("success");
+  } else {
+    res.status(400).send("failed");
+  }
+}
+
+module.exports = { sendMail, payment_mail };
+
