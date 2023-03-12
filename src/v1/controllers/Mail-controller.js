@@ -2,6 +2,7 @@
 const nodemailer = require("nodemailer");
 const path = require("path");
 const ejs = require("ejs");
+const { json } = require("body-parser");
 // const { exit } = require("process");
 // const attachments = require('attachments')
 // const recipient
@@ -50,7 +51,7 @@ sendMail = async (req, res) => {
     name,
     student_id,
     lead_id,
-    response
+    response,
     // payment,
   });
 
@@ -74,6 +75,30 @@ sendMail = async (req, res) => {
 };
 
 payment_mail = async (req, res) => {
+  // console.log("data:",req)
+  // console.log(req.body.data.invoice_id);
+  // console.log(req.body.data.company_logo);
+
+  const company_details = JSON.parse(req.body.data);
+  // console.log("=++=", JSON.parse(req.body.data));
+  console.log(company_details);
+  const invoice_id = company_details?.invoice_id;
+  const transaction_id = company_details?.transaction_id;
+  const lead_id = company_details?.lead_id;
+  const company_id = company_details?.company_id;
+  const user_id = company_details?.user_id;
+  const company_name = company_details?.company_name;
+  const company_logo =
+    "https://crmcompany.quadque.digital/public/" +
+    company_details?.company_logo;
+  const payment_amount = company_details?.payment_amount;
+  const payment_method = company_details?.payment_method;
+  const payer_name = company_details?.payer_name;
+  const payer_email = company_details?.payer_email;
+  const company_email = company_details?.company_email;
+  const company_contact = company_details?.company_contact;
+  const company_website = company_details?.company_website;
+
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -84,7 +109,6 @@ payment_mail = async (req, res) => {
 
   let file = path.join(__dirname, "../../../views/payment_complete.ejs");
 
-
   const data = await ejs.renderFile(file, {
     // text,
     // type,
@@ -93,6 +117,20 @@ payment_mail = async (req, res) => {
     // lead_id,
     // response,
     // payment,
+    invoice_id,
+    transaction_id,
+    lead_id,
+    company_id,
+    user_id,
+    company_name,
+    company_logo,
+    payment_amount,
+    payment_method,
+    payer_name,
+    payer_email,
+    company_email,
+    company_contact,
+    company_website,
   });
   const recipient = ["megatanjib@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
@@ -100,7 +138,7 @@ payment_mail = async (req, res) => {
     info = await transporter.sendMail({
       from: "tanjibrubyat@gmail.com",
       to: recipient[i],
-      subject: req.body.subject,
+      subject: "payment complete",
       html: data,
     });
   }
@@ -110,7 +148,7 @@ payment_mail = async (req, res) => {
   } else {
     res.status(400).send("failed");
   }
-}
+};
 
 registration_mail = async (req, res) => {
   let transporter = nodemailer.createTransport({
@@ -121,7 +159,7 @@ registration_mail = async (req, res) => {
     },
   });
 
-  const email = req.body.email
+  const email = req.body.email;
   const name = req.body.full_name;
   const password = req.body.password;
 
@@ -137,7 +175,7 @@ registration_mail = async (req, res) => {
     // payment,
     email,
     name,
-    password
+    password,
   });
   const recipient = ["megatanjib@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
@@ -158,4 +196,3 @@ registration_mail = async (req, res) => {
 };
 
 module.exports = { sendMail, payment_mail, registration_mail };
-
