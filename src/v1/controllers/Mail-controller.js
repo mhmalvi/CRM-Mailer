@@ -158,7 +158,7 @@ registration_mail = async (req, res) => {
       pass: "qaaqcvbjgnyrhgrr",
     },
   });
-
+//dfdgfgdfgg
   const email = req.body.email;
   const name = req.body.full_name;
   const password = req.body.password;
