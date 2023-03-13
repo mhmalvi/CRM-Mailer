@@ -117,7 +117,6 @@ payment_mail = async (req, res) => {
     // lead_id,
     // response,
     // payment,
-    full_name,
     invoice_id,
     transaction_id,
     lead_id,
