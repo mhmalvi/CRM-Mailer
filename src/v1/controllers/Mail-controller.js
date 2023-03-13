@@ -82,6 +82,7 @@ payment_mail = async (req, res) => {
   const company_details = JSON.parse(req.body.data);
   // console.log("=++=", JSON.parse(req.body.data));
   console.log(company_details);
+  const full_name = company_details?.full_name;
   const invoice_id = company_details?.invoice_id;
   const transaction_id = company_details?.transaction_id;
   const lead_id = company_details?.lead_id;
@@ -117,6 +118,7 @@ payment_mail = async (req, res) => {
     // lead_id,
     // response,
     // payment,
+    full_name,
     invoice_id,
     transaction_id,
     lead_id,
