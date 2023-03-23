@@ -10,8 +10,8 @@ sendMail = async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "tanjibrubyat@gmail.com",
-      pass: "qaaqcvbjgnyrhgrr",
+      user: "yuanhuafung2021@gmail.com",
+      pass: "sabbath_hastalavista_remembering_78rr@252",
     },
   });
 
@@ -19,11 +19,15 @@ sendMail = async (req, res) => {
   const status = req.body.lead_status;
   const response = req.body.response;
   console.log(response);
-  if (status == 0) {
-    type = "suspended";
-  } else if (status == 1) {
-    type = "new lead";
-  } else if (status == 2) {
+  // if (status == 0) {
+  //   type = "suspended";
+  //   subject = ""
+  // }
+  // if (status == 1) {
+  //   type = "new lead";
+  // } else
+  if (status == 2) {
+    subject = ""
     type = "skilled";
   } else if (status == 3 && response !== "") {
     type = "called";
@@ -60,7 +64,7 @@ sendMail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "tanjibrubyat@gmail.com",
+      from: "yuanhuafung2021@gmail.com",
       to: recipient[i],
       subject: req.body.subject,
       html: data,
@@ -158,7 +162,7 @@ registration_mail = async (req, res) => {
       pass: "qaaqcvbjgnyrhgrr",
     },
   });
-//dfdgfgdfgg
+  //dfdgfgdfgg
   const email = req.body.email;
   const name = req.body.full_name;
   const password = req.body.password;
