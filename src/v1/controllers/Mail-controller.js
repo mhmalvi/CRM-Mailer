@@ -10,8 +10,8 @@ sendMail = async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "tanjibrubyat@gmail.com",
-      pass: "bpfcnuindfdmeequ",
+      user: "yuanhuafung2021@gmail.com",
+      pass: "rqorbgqxoxxbbfvq",
     },
   });
 
@@ -23,10 +23,9 @@ sendMail = async (req, res) => {
   //   type = "suspended";
   //   subject = ""
   // }
-  // if (status == 1) {
-  //   type = "new lead";
-  // } else
-  if (status == 2) {
+  if (status == 1) {
+    type = "new lead";
+  } else if (status == 2) {
     type = "skilled";
   } else if (status == 3 && response !== "") {
     type = "called";
@@ -63,7 +62,7 @@ sendMail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "tanjibrubyat@gmail.com",
+      from: "yuanhuafung2021@gmail.com",
       to: recipient[i],
       subject: req.body.subject,
       html: data,
@@ -105,8 +104,8 @@ payment_mail = async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "tanjibrubyat@gmail.com",
-      pass: "bpfcnuindfdmeequ",
+      user: "yuanhuafung2021@gmail.com",
+      pass: "rqorbgqxoxxbbfvq",
     },
   });
 
@@ -139,7 +138,7 @@ payment_mail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "tanjibrubyat@gmail.com",
+      from: "yuanhuafung2021@gmail.com",
       to: recipient[i],
       subject: "payment complete",
       html: data,
@@ -157,8 +156,8 @@ registration_mail = async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "tanjibrubyat@gmail.com",
-      pass: "bpfcnuindfdmeequ",
+      user: "yuanhuafung2021@gmail.com",
+      pass: "rqorbgqxoxxbbfvq",
     },
   });
   //dfdgfgdfgg
@@ -184,7 +183,7 @@ registration_mail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "tanjibrubyat@gmail.com",
+      from: "yuanhuafung2021@gmail.com",
       to: recipient[i],
       subject: "registration status",
       html: data,
