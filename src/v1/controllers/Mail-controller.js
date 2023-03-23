@@ -106,7 +106,7 @@ payment_mail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "tanjibrubyat@gmail.com",
-      pass: "qaaqcvbjgnyrhgrr",
+      pass: "bpfcnuindfdmeequ",
     },
   });
 
@@ -158,7 +158,7 @@ registration_mail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "tanjibrubyat@gmail.com",
-      pass: "qaaqcvbjgnyrhgrr",
+      pass: "bpfcnuindfdmeequ",
     },
   });
   //dfdgfgdfgg
