@@ -50,7 +50,7 @@ sendMail = async (req, res) => {
   const name = req.body.name;
   const student_id = req.body.student_id;
   const lead_id = req.body.lead_id;
-  const email = req.body.email
+  const email = req.body.to
   // const payment = req.body.payment;
   let info;
   let file = path.join(__dirname, "../../../views/skilled.ejs");
