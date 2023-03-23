@@ -142,7 +142,7 @@ payment_mail = async (req, res) => {
     company_contact,
     company_website,
   });
-  const recipient = ["megatanjib@gmail.com", payer_email];
+  const recipient = ["megatanjib@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
