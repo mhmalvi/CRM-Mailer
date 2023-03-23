@@ -11,7 +11,7 @@ sendMail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "yuanhuafung2021@gmail.com",
-      pass: "rqorbgqxoxxbbfvq",
+      pass: "pmbffpmadcpnogfr",
     },
   });
 
@@ -105,7 +105,7 @@ payment_mail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "yuanhuafung2021@gmail.com",
-      pass: "rqorbgqxoxxbbfvq",
+      pass: "pmbffpmadcpnogfr",
     },
   });
 
@@ -157,7 +157,7 @@ registration_mail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "yuanhuafung2021@gmail.com",
-      pass: "rqorbgqxoxxbbfvq",
+      pass: "pmbffpmadcpnogfr",
     },
   });
   //dfdgfgdfgg
