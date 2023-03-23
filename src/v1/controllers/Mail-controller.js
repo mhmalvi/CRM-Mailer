@@ -10,8 +10,8 @@ sendMail = async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "tanjibrubyat@gmail.com",
-      pass: "fjpdwtxundmlcixs",
+      user: "yuanhuafung2021@gmail.com",
+      pass: "rqorbgqxoxxbbfvq",
     },
   });
 
@@ -27,7 +27,6 @@ sendMail = async (req, res) => {
   //   type = "new lead";
   // } else
   if (status == 2) {
-    subject = ""
     type = "skilled";
   } else if (status == 3 && response !== "") {
     type = "called";
@@ -64,7 +63,7 @@ sendMail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "tanjibrubyat@gmail.com",
+      from: "yuanhuafung2021@gmail.com",
       to: recipient[i],
       subject: req.body.subject,
       html: data,
