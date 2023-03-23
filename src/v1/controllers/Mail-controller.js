@@ -63,7 +63,7 @@ sendMail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "yuanhuafung2021@gmail.com",
+      from: "tanjibrubyat@gmail.com",
       to: recipient[i],
       subject: req.body.subject,
       html: data,
