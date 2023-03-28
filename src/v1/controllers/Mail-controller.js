@@ -3,6 +3,7 @@ const nodemailer = require("nodemailer");
 const path = require("path");
 const ejs = require("ejs");
 const { json } = require("body-parser");
+const { exit } = require("process");
 // const { exit } = require("process");
 // const attachments = require('attachments')
 // const recipient
@@ -66,7 +67,7 @@ sendMail = async (req, res) => {
   });
 
   // console.log(data)
-  const recipient = ["megatanjib@gmail.com",email];
+  const recipient = ["megatanjib@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
@@ -91,7 +92,7 @@ payment_mail = async (req, res) => {
 
   const company_details = JSON.parse(req.body.data);
   // console.log("=++=", JSON.parse(req.body.data));
-  console.log(company_details);
+  
   const invoice_id = company_details?.invoice_id;
   const transaction_id = company_details?.transaction_id;
   const lead_id = company_details?.lead_id;
@@ -108,7 +109,8 @@ payment_mail = async (req, res) => {
   const company_email = company_details?.company_email;
   const company_contact = company_details?.company_contact;
   const company_website = company_details?.company_website;
-
+  console.log(payer_email);
+  // exit()
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
