@@ -49,7 +49,7 @@ sendMail = async (req, res) => {
   } else if (status == 7) {
     type = "canceled";
     subject = "canceled";
-    email = "megatanjib@gmail.com";
+    // email = "megatanjib@gmail.com";
   }
   console.log(type);
   // const text = req.body.text;
