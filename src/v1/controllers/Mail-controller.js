@@ -33,25 +33,30 @@ sendMail = async (req, res) => {
   } else if (status == 3 && response !== "") {
     type = "called";
     subject = "you are called";
+    email = "megatanjib@gmail.com";
   } else if (status == 4) {
     type = "paid";
     subject = "payment complete";
+    email = "megatanjib@gmail.com";
   } else if (status == 5) {
     type = "verified";
     subject = "you are verified";
+    email = "megatanjib@gmail.com";
   } else if (status == 6) {
     type = "completed";
     subject = "complete";
+    email = "megatanjib@gmail.com";
   } else if (status == 7) {
     type = "canceled";
     subject = "canceled";
+    email = "megatanjib@gmail.com";
   }
   console.log(type);
   // const text = req.body.text;
   const name = req.body.name;
   const student_id = req.body.student_id;
   const lead_id = req.body.lead_id;
-  const email = req.body.to
+  email = "megatanjib@gmail.com";
   // const payment = req.body.payment;
   let info;
   let file = path.join(__dirname, "../../../views/skilled.ejs");
@@ -67,7 +72,7 @@ sendMail = async (req, res) => {
   });
 
   // console.log(data)
-  const recipient = ["megatanjib@gmail.com"];
+  const recipient = [email];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
