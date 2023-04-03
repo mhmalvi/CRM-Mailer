@@ -14,7 +14,7 @@ sendMail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "tanjibrubyat@gmail.com",
-      pass: "bpfcnuindfdmeequ",
+      pass: "xlbgtvtdrmcbiwdl",
     },
   });
 
