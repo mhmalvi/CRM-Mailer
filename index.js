@@ -13,6 +13,7 @@ app.use(
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   })
 );
+app.use(cors());
 app.use(express.json());
 app.set("view engine", "ejs");
 // app.use(express.static('public'))
