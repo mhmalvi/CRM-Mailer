@@ -8,7 +8,10 @@ const path = require("path");
 
 const app = express();
 app.use(
-  cors()
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+  })
 );
 // app.use(cors());
 app.use(express.json());
