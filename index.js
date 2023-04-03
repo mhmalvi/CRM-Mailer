@@ -8,12 +8,9 @@ const path = require("path");
 
 const app = express();
 app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-  })
+  cors()
 );
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 app.set("view engine", "ejs");
 // app.use(express.static('public'))
