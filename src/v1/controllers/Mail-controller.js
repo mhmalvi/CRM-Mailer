@@ -13,26 +13,26 @@ sendMail = async (req, res) => {
     secure: true,
     service: "gmail",
     auth: {
-      user: "tanjibrubyat@gmail.com",
-      pass: "xlbgtvtdrmcbiwdl",
+      user: "yuanhuafung2021@gmail.com",
+      pass: "kjroxdopwqjuzouu",
     },
   });
 
   let type;
   const status = req.body.lead_status;
   const response = req.body.response;
-  console.log(response);
+  // console.log(req.body);
   // if (status == 0) {
   //   type = "suspended";
   //   subject = ""
   // }
+  let email;
   if (status == 1) {
     type = "new lead";
-    subject = "new lead"
+    subject = "new lead";
   } else if (status == 2) {
     type = "skilled";
     subject = "you are skilled";
-    email = "megatanjib@gmail.com";
   } else if (status == 3 && response !== "") {
     type = "called";
     subject = "you are called";
@@ -54,7 +54,7 @@ sendMail = async (req, res) => {
     subject = "canceled";
     // email = "megatanjib@gmail.com";
   }
-  console.log(type);
+  // console.log(email);
   // const text = req.body.text;
   const name = req.body.name;
   const student_id = req.body.student_id;
@@ -79,9 +79,9 @@ sendMail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "tanjibrubyat@gmail.com",
+      from: "yuanhuafung2021@gmail.com",
       to: recipient[i],
-      subject: req.body.subject,
+      subject: subject,
       html: data,
     });
   }
@@ -100,7 +100,7 @@ payment_mail = async (req, res) => {
 
   const company_details = JSON.parse(req.body.data);
   // console.log("=++=", JSON.parse(req.body.data));
-  
+
   const invoice_id = company_details?.invoice_id;
   const transaction_id = company_details?.transaction_id;
   const lead_id = company_details?.lead_id;
