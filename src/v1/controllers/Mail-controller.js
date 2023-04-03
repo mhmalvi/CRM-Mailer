@@ -13,8 +13,8 @@ sendMail = async (req, res) => {
     secure: true,
     service: "gmail",
     auth: {
-      user: "yuanhuafung2021@gmail.com",
-      pass: "kjroxdopwqjuzouu",
+      user: "tanjibrubyat@gmail.com",
+      pass: "bpfcnuindfdmeequ",
     },
   });
 
