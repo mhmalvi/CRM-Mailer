@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
-const cors = require("cors");
+// const cors = require("cors");
 // const MailController = require("../controllers/Mail-controller");
-app.use(cors());
+// app.use(cors());
 const {
   sendMail,
   payment_mail,
