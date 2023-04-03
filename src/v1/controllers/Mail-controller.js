@@ -26,7 +26,7 @@ sendMail = async (req, res) => {
   // }
   if (status == 1) {
     type = "new lead";
-    subject = "new lead";
+    subject = "new lead"
   } else if (status == 2) {
     type = "skilled";
     subject = "you are skilled";
@@ -97,7 +97,7 @@ payment_mail = async (req, res) => {
 
   const company_details = JSON.parse(req.body.data);
   // console.log("=++=", JSON.parse(req.body.data));
-
+  
   const invoice_id = company_details?.invoice_id;
   const transaction_id = company_details?.transaction_id;
   const lead_id = company_details?.lead_id;
