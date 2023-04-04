@@ -7,6 +7,72 @@ const { exit } = require("process");
 // const { exit } = require("process");
 // const attachments = require('attachments')
 // const recipient
+sendMailForResponse = async (req, res) => {
+  let transporter = nodemailer.createTransport({
+    port: 465,
+    secure: true,
+    service: "gmail",
+    auth: {
+      user: "yuanhuafung2021@gmail.com",
+      pass: "kjroxdopwqjuzouu",
+    },
+  });
+
+  let type;
+  const status = req.body.lead_status;
+  const response = req.body.response;
+  // console.log(req.body);
+  // if (status == 0) {
+  //   type = "suspended";
+  //   subject = ""
+  // }
+  let email;
+  let subject = "you are called";
+  if (status == 3 && response == 1) {
+    type = "called";
+    
+  } else if (status == 3 && response == 0) {
+    type = "called";
+  }
+  // console.log(email);
+  // const text = req.body.text;
+  const name = req.body.name;
+  const student_id = req.body.student_id;
+  const lead_id = req.body.lead_id;
+  email = "megatanjib@gmail.com";
+  // const payment = req.body.payment;
+  let info;
+  let file = path.join(__dirname, "../../../views/response.ejs");
+
+  const data = await ejs.renderFile(file, {
+    // text,
+    type,
+    name,
+    student_id,
+    lead_id,
+    response,
+    // payment,
+  });
+
+  // console.log(data)
+  const recipient = [email];
+  for (let i = 0; i < recipient.length; i++) {
+    // console.log(recipient[i])
+    info = await transporter.sendMail({
+      from: "yuanhuafung2021@gmail.com",
+      to: recipient[i],
+      subject: subject,
+      html: data,
+    });
+  }
+
+  if (info) {
+    res.status(200).send("success");
+  } else {
+    res.status(400).send("failed");
+  }
+};
+
 sendMail = async (req, res) => {
   let transporter = nodemailer.createTransport({
     port: 465,
@@ -33,11 +99,13 @@ sendMail = async (req, res) => {
   } else if (status == 2) {
     type = "skilled";
     subject = "you are skilled";
-  } else if (status == 3 && response !== "") {
-    type = "called";
-    subject = "you are called";
     email = "megatanjib@gmail.com";
-  } else if (status == 4) {
+  }
+  // else if (status == 3 && response !== "") {
+  //   type = "called";
+  //   subject = "you are called";
+  // }
+  else if (status == 4) {
     type = "paid";
     subject = "payment complete";
     email = "megatanjib@gmail.com";
@@ -215,4 +283,9 @@ registration_mail = async (req, res) => {
   }
 };
 
-module.exports = { sendMail, payment_mail, registration_mail };
+module.exports = {
+  sendMail,
+  payment_mail,
+  registration_mail,
+  sendMailForResponse,
+};

@@ -6,6 +6,7 @@ const {
   sendMail,
   payment_mail,
   registration_mail,
+  sendMailForResponse,
 } = require("../controllers/Mail-controller");
 
 // middleware that is specific to this router
@@ -17,6 +18,7 @@ const {
 router.post("/send-mail",sendMail)
 router.post("/send-payment-mail", payment_mail);
 router.post("/send-registration-mail", registration_mail);
+router.post("/send-responded-mail", sendMailForResponse);
 // // define the about route
 // router.get("/about", (req, res) => {
 //   res.send("About birds");
