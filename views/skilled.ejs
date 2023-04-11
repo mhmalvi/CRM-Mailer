@@ -562,7 +562,17 @@
                                                 We haven't found any response from you. Please contact with us.
                                                 <%} else if(response == 1){%>
                                                   Thank you for your response. Follow the next steps.
-                                                <% } else { %>
+                                                <% }else if(type == "new lead"){
+                                                  Thank you for your enquiry.
+
+One of our student education consultants will be in touch with you shortly to further assist you with your enquiry.
+
+We are excited and looking forward in assisting you with your journey or becoming qualified.
+
+
+Thank you
+
+                                                } else { %>
                                                 You are <%=type%>
                                                 <%  } %>    
                                                 <p style="font-size: 18px">Your lead id is <%=lead_id%></p>
