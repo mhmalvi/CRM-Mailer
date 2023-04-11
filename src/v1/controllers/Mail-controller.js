@@ -286,6 +286,6 @@ payment_mail = async (req, res) => {
 module.exports = {
   sendMail,
   payment_mail,
-  registration_mail,
+  // registration_mail,
   sendMailForResponse,
 };
