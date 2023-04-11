@@ -555,7 +555,7 @@
                                         "
                                       >
                                         <span style="font-size: 18px"
-                                          >Hi <%=name%>! <% if(type=="paid"){ %> Thank you for your payment. Proceed further.
+                                          ><p style="text-align: left;">Hi <%=name%>!</p> <% if(type=="paid"){ %> Thank you for your payment. Proceed further.
                                             <%} else if(type=="completed"){ %>
                                                 You will get your certificate shortly
                                               <%} else if(response == 0){ %>
@@ -572,10 +572,14 @@
 
 <!-- <Thank style="text-align: left;">Thank you</p> -->
 
-                                                <%} else { %>
+                                                <%}else if(type=="skilled"){%>
+                                                  <b style="text-align: left;">Congratulations!</b>
+                                                  <b style="text-align: left;">With the information we have gathered, we can advise you that you are eligible to continue with the RPL process.</b>
+                                                  <b style="text-align: left;">Our dedicated member of staff will be in contact with you to further advise how you can proceed.</b>
+                                                <% } else { %>
                                                 You are <%=type%>
                                                 <%  } %>    
-                                                <p style="font-size: 18px">Thank you</p>
+                                                <p>Thank you</p>
                                                 <!-- <p style="font-size: 18px">Your lead id is <%=lead_id%></p>
                                                 <p style="font-size: 18px">Your student id is <%=student_id%></p> -->
                                            <!-- on
