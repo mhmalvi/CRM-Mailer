@@ -76,12 +76,12 @@ sendMailForResponse = async (req, res) => {
 sendMail = async (req, res) => {
   console.log(req.body);
   let transporter = nodemailer.createTransport({
-    // port: 587,
+    port: 465,
     secure: true,
-    service: "smtp-mail.outlook.com",
+    service: "hotmail",
     auth: {
-      user: "tanjib@quadque.digital",
-      pass: "Rad84833",
+      user: "yuanhuafung2021@gmail.com",
+      pass: "kjroxdopwqjuzouu",
     },
   });
 
@@ -149,7 +149,7 @@ sendMail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "tanjib@quadque.digital",
+      from: "yuanhuafung2021@gmail.com",
       to: recipient[i],
       subject: subject,
       html: data,
