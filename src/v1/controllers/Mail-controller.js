@@ -76,7 +76,7 @@ sendMailForResponse = async (req, res) => {
 sendMail = async (req, res) => {
   console.log(req.body);
   let transporter = nodemailer.createTransport({
-    port: 587,
+    // port: 587,
     secure: true,
     service: "smtp-mail.outlook.com",
     auth: {
