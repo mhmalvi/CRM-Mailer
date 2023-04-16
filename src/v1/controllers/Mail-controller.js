@@ -99,7 +99,7 @@ sendMail = async (req, res) => {
   let email;
   if (status == 1) {
     type = "new lead";
-    subject = "new lead";
+    subject = "You are new lead";
     email = "megatanjib@gmail.com";
   } else if (status == 2) {
     type = "skilled";
