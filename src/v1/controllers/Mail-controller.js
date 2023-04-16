@@ -80,7 +80,7 @@ sendMail = async (req, res) => {
   let transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
-    service: "gmail",
+    service: "hotmail",
     auth: {
       user: "yuanhuafung2021@gmail.com",
       pass: "kjroxdopwqjuzouu",
