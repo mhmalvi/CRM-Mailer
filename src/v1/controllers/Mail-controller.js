@@ -74,6 +74,7 @@ sendMailForResponse = async (req, res) => {
 };
 
 sendMail = async (req, res) => {
+  console.log(req.body);
   let transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
@@ -87,7 +88,7 @@ sendMail = async (req, res) => {
   let type;
   const status = req.body.lead_status;
   const response = req.body.response;
-  console.log(req.body);
+  
   // if (status == 0) {
   //   type = "suspended";
   //   subject = ""
