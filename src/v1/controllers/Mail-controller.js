@@ -76,7 +76,7 @@ sendMailForResponse = async (req, res) => {
 sendMail = async (req, res) => {
 
 
-  console.log(req.body.logo);
+  console.log(req.body.logo.data);
   let transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
