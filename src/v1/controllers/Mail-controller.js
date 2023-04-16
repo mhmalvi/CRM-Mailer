@@ -90,7 +90,8 @@ sendMail = async (req, res) => {
   let type;
   const status = req.body.lead_status;
   const response = req.body.response;
-  
+  const logo = req.body.logo;
+  const logo_file = "https://crmcompany.quadque.digital/public/"+logo;
   // if (status == 0) {
   //   type = "suspended";
   //   subject = ""
@@ -143,6 +144,7 @@ sendMail = async (req, res) => {
     student_id,
     lead_id,
     response,
+    logo_file,
     // payment,
   });
 
