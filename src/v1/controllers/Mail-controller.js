@@ -80,7 +80,7 @@ sendMail = async (req, res) => {
     secure: true,
     service: "smtp-mail.outlook.com",
     auth: {
-      user: "TANJIB@quadque.digital",
+      user: "tanjib@quadque.digital",
       pass: "Rad84833",
     },
   });
@@ -149,7 +149,7 @@ sendMail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "TANJIB@quadque.digital",
+      from: "tanjib@quadque.digital",
       to: recipient[i],
       subject: subject,
       html: data,
