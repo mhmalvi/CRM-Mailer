@@ -30,7 +30,6 @@ sendMailForResponse = async (req, res) => {
   let subject = "you are called";
   if (status == 3 && response == 1) {
     type = "called";
-    
   } else if (status == 3 && response == 0) {
     type = "called";
   }
@@ -74,8 +73,6 @@ sendMailForResponse = async (req, res) => {
 };
 
 sendMail = async (req, res) => {
-
-
   console.log(req.body.logo);
   let transporter = nodemailer.createTransport({
     port: 465,
@@ -91,7 +88,9 @@ sendMail = async (req, res) => {
   const status = req.body.lead_status;
   const response = req.body.response;
   const logo = req.body.logo;
-  const logo_file = "https://crmcompany.quadque.digital/public/"+logo;
+  const college = req.body.client;
+  const subject = req.body.course;
+  const logo_file = "https://crmcompany.quadque.digital/public/" + logo;
   // if (status == 0) {
   //   type = "suspended";
   //   subject = ""
@@ -99,11 +98,11 @@ sendMail = async (req, res) => {
   let email;
   if (status == 1) {
     type = "new lead";
-    subject = "You are new lead";
+    subject = college + "-" + subject;
     email = "megatanjib@gmail.com";
   } else if (status == 2) {
     type = "skilled";
-    subject = "you are skilled";
+    subject = "You are skilled";
     email = "megatanjib@gmail.com";
   }
   // else if (status == 3 && response !== "") {
