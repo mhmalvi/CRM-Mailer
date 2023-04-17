@@ -89,7 +89,7 @@ sendMail = async (req, res) => {
   const response = req.body.response;
   const logo = req.body.logo;
   const college = req.body.client;
-  const subject = req.body.course;
+  const course = req.body.course;
   const logo_file = "https://crmcompany.quadque.digital/public/" + logo;
   // if (status == 0) {
   //   type = "suspended";
@@ -98,7 +98,7 @@ sendMail = async (req, res) => {
   let email;
   if (status == 1) {
     type = "new lead";
-    subject = college + "-" + subject;
+    subject = college + "-" + course;
     console.log(subject)
     email = "megatanjib@gmail.com";
   } else if (status == 2) {
