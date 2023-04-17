@@ -79,8 +79,8 @@ sendMail = async (req, res) => {
     secure: true,
     service: "gmail",
     auth: {
-      user: "yuanhuafung2021@gmail.com",
-      pass: "kjroxdopwqjuzouu",
+      user: "admin@itecounsel.com",
+      pass: "wpgvrfoizhrntjjn",
     },
   });
 
@@ -152,7 +152,7 @@ sendMail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "yuanhuafung2021@gmail.com",
+      from: "admin@itecounsel.com",
       to: recipient[i],
       subject: subject,
       html: data,
