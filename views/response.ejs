@@ -192,7 +192,7 @@
                                     width: 100%;
                                   "
                                 >
-                                  <div
+                                  <!-- <div
                                     align="center"
                                     class="alignment"
                                     style="line-height: 10px"
@@ -209,7 +209,7 @@
                                       "
                                       width="300"
                                     />
-                                  </div>
+                                  </div> -->
                                 </td>
                               </tr>
                             </table>
@@ -299,7 +299,7 @@
                                     width: 100%;
                                   "
                                 >
-                                <% if(type=="paid"){ %>
+                                <% if(response==1){ %>
                                   <div
                                     align="center"
                                     class="alignment"
@@ -307,7 +307,7 @@
                                   >
                                     <img
                                       class="big"
-                                      src="https://i.ibb.co/8BnXyH2/b2cde6d6-a2fa-439a-b06f-1bf93360760f.jpg"
+                                      src="https://i.ibb.co/gMdnw9F/Email-marketing-03.png"
                                       style="
                                         display: block;
                                         height: auto;
@@ -319,7 +319,7 @@
                                       width="550"
                                     />
                                   </div>
-                                  <% }else{ %>
+                                  <% }else if(response==0){ %>
                                     <div
                                     align="center"
                                     class="alignment"
@@ -468,7 +468,7 @@
                                   >
                                     <strong>Your registration is complete</strong>
                                   </h1>
-                                  <%} else if(type=='called' && response!==""){ %>
+                                  <%} else if(type=='called' && response!==0){ %>
                                     <h1
                                     style="
                                       margin: 0;
@@ -485,26 +485,7 @@
                                       margin-bottom: 0;
                                     "
                                   >
-                                    <strong>You are called</strong>
-                                  </h1>
-                                  <% } else { %>
-                                    <h1
-                                    style="
-                                      margin: 0;
-                                      color: #555555;
-                                      direction: ltr;
-                                      font-family: Arial, Helvetica Neue,
-                                        Helvetica, sans-serif;
-                                      font-size: 40px;
-                                      font-weight: 400;
-                                      letter-spacing: normal;
-                                      line-height: 120%;
-                                      text-align: center;
-                                      margin-top: 0;
-                                      margin-bottom: 0;
-                                    "
-                                  >
-                                    <strong>Your are <%= type %></strong>
+                                    <strong>Thank you for your response</strong>
                                   </h1>
                                   <% } %>
                                 </td>
@@ -559,9 +540,7 @@
                                                   Thank you for your response. Follow the next steps.
                                                 <% } else if(response == 0) { %>
                                                 We tried to contact with you but couldn't find any response from you.
-                                                <%  } %>    
-                                                <p style="font-size: 18px">Your lead id is <%=lead_id%></p>
-                                                <p style="font-size: 18px">Your student id is <%=student_id%></p>
+                                                <%  } %> 
                                            <!-- on
                                           <strong>April 04, 2022</strong> 
                                           using -->
