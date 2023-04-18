@@ -38,7 +38,7 @@ sendMailForResponse = async (req, res) => {
   const name = req.body.name;
   const student_id = req.body.student_id;
   const lead_id = req.body.lead_id;
-  email = "megatanjib@gmail.com";
+  email = "Hilal@itecounsel.com";
   // const payment = req.body.payment;
   let info;
   let file = path.join(__dirname, "../../../views/response.ejs");
@@ -99,11 +99,11 @@ sendMail = async (req, res) => {
   if (status == 1) {
     type = "new lead";
     subject = college + "-" + course;
-    email = "megatanjib@gmail.com";
+    email = "Hilal@itecounsel.com";
   } else if (status == 2) {
     type = "skilled";
     subject = "You are skilled";
-    email = "megatanjib@gmail.com";
+    email = "Hilal@itecounsel.com";
   }
   // else if (status == 3 && response !== "") {
   //   type = "called";
@@ -112,26 +112,26 @@ sendMail = async (req, res) => {
   else if (status == 4) {
     type = "paid";
     subject = "payment complete";
-    email = "megatanjib@gmail.com";
+    email = "Hilal@itecounsel.com";
   } else if (status == 5) {
     type = "verified";
     subject = "you are verified";
-    email = "megatanjib@gmail.com";
+    email = "Hilal@itecounsel.com";
   } else if (status == 6) {
     type = "completed";
     subject = "complete";
-    email = "megatanjib@gmail.com";
+    email = "Hilal@itecounsel.com";
   } else if (status == 7) {
     type = "canceled";
     subject = "canceled";
-    // email = "megatanjib@gmail.com";
+    // email = "Hilal@itecounsel.com";
   }
   // console.log(email);
   // const text = req.body.text;
   const name = req.body.name;
   const student_id = req.body.student_id;
   const lead_id = req.body.lead_id;
-  // email = "megatanjib@gmail.com";
+  // email = "Hilal@itecounsel.com";
   // const payment = req.body.payment;
   let info;
   let file = path.join(__dirname, "../../../views/skilled.ejs");
@@ -225,7 +225,7 @@ payment_mail = async (req, res) => {
     company_contact,
     company_website,
   });
-  const recipient = ["megatanjib@gmail.com", payer_email];
+  const recipient = ["Hilal@itecounsel.com", payer_email];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
@@ -270,7 +270,7 @@ payment_mail = async (req, res) => {
 //     name,
 //     password,
 //   });
-//   const recipient = ["megatanjib@gmail.com", email];
+//   const recipient = ["Hilal@itecounsel.com", email];
 //   for (let i = 0; i < recipient.length; i++) {
 //     // console.log(recipient[i])
 //     info = await transporter.sendMail({
