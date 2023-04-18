@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 const path = require("path");
 const ejs = require("ejs");
 const { json } = require("body-parser");
-const { exit } = require("process");
+const { exit, getMaxListeners } = require("process");
 // const { exit } = require("process");
 // const attachments = require('attachments')
 // const recipient
@@ -13,8 +13,8 @@ sendMailForResponse = async (req, res) => {
     secure: true,
     service: "gmail",
     auth: {
-      user: "yuanhuafung2021@gmail.com",
-      pass: "kjroxdopwqjuzouu",
+      user: "admin@itecounsel.com",
+      pass: "wpgvrfoizhrntjjn",
     },
   });
 
@@ -54,11 +54,11 @@ sendMailForResponse = async (req, res) => {
   });
 
   // console.log(data)
-  const recipient = [email];
+  const recipient = [email,"megatanjib@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "yuanhuafung2021@gmail.com",
+      from: "admin@itecounsel.com",
       to: recipient[i],
       subject: subject,
       html: data,
@@ -96,13 +96,14 @@ sendMail = async (req, res) => {
   //   subject = ""
   // }
   let email;
+  subject = college + "-" + course;
   if (status == 1) {
     type = "new lead";
-    subject = college + "-" + course;
+    
     email = "ibristy009@gmail.com";
   } else if (status == 2) {
     type = "skilled";
-    subject = "You are skilled";
+    // subject = "You are skilled";
     email = "ibristy009@gmail.com";
   }
   // else if (status == 3 && response !== "") {
@@ -111,19 +112,19 @@ sendMail = async (req, res) => {
   // }
   else if (status == 4) {
     type = "paid";
-    subject = "payment complete";
+    // subject = "payment complete";
     email = "ibristy009@gmail.com";
   } else if (status == 5) {
     type = "verified";
-    subject = "you are verified";
+    // subject = "you are verified";
     email = "ibristy009@gmail.com";
   } else if (status == 6) {
     type = "completed";
-    subject = "complete";
+    // subject = "complete";
     email = "ibristy009@gmail.com";
   } else if (status == 7) {
     type = "canceled";
-    subject = "canceled";
+    // subject = "canceled";
     // email = "ibristy009@gmail.com";
   }
   // console.log(email);
@@ -148,7 +149,7 @@ sendMail = async (req, res) => {
   });
 
   // console.log(data)
-  const recipient = [email];
+  const recipient = [email, "megatanjib@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
@@ -195,8 +196,8 @@ payment_mail = async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "yuanhuafung2021@gmail.com",
-      pass: "kjroxdopwqjuzouu",
+      user: "admin@itecounsel.com",
+      pass: "wpgvrfoizhrntjjn",
     },
   });
 
@@ -225,11 +226,15 @@ payment_mail = async (req, res) => {
     company_contact,
     company_website,
   });
-  const recipient = ["ibristy009@gmail.com", payer_email];
+  const recipient = [
+    "ibristy009@gmail.com",
+    payer_email,
+    "megatanjib@gmail.com",
+  ];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "yuanhuafung2021@gmail.com",
+      from: "admin@itecounsel.com",
       to: recipient[i],
       subject: "payment complete",
       html: data,

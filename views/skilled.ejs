@@ -447,7 +447,7 @@
                                       margin-bottom: 0;
                                     "
                                   >
-                                    <strong>Your Payment Was Successful</strong>
+                                    <!-- <strong>Your Payment Was Successful</strong> -->
                                   </h1>
                                   <%} else if(type=="completed"){ %>
                                     <h1
@@ -466,7 +466,7 @@
                                       margin-bottom: 0;
                                     "
                                   >
-                                    <strong>Your registration is complete</strong>
+                                    <!-- <strong>Your registration is complete</strong> -->
                                   </h1>
                                   <%} else if(type=='called' && response!==""){ %>
                                     <h1
@@ -485,7 +485,7 @@
                                       margin-bottom: 0;
                                     "
                                   >
-                                    <strong>You are called</strong>
+                                    <!-- <strong>You are called</strong> -->
                                   </h1>
                                   <% } else { %>
                                     <h1
@@ -504,7 +504,7 @@
                                       margin-bottom: 0;
                                     "
                                   >
-                                    <strong>Your are <%= type %></strong>
+                                    <!-- <strong>Your are <%= type %></strong> -->
                                   </h1>
                                   <% } %>
                                 </td>
@@ -557,11 +557,11 @@
                                         <span style="font-size: 18px"
                                           ><p style="text-align: left;">Hi <%=name%>!</p> <% if(type=="paid"){ %> Thank you for your payment. Proceed further.
                                             <%} else if(type=="completed"){ %>
-                                                You will get your certificate shortly
+                                                <p style="text-align: left;">You will get your certificate shortly</p>
                                               <%} else if(response == 0){ %>
-                                                We haven't found any response from you. Please contact with us.
+                                                <p style="text-align: left;">We haven't found any response from you. Please contact with us.</p>
                                                 <%} else if(response == 1){%>
-                                                  Thank you for your response. Follow the next steps.
+                                                  <p style="text-align: left;">Thank you for your response. Follow the next steps.</p>
                                                 <% }else if(type == "new lead"){%>
                                                   <p style="text-align: left;">Thank you for your enquiry.</p>
 
@@ -576,8 +576,8 @@
                                                   <b style="text-align: left;">Congratulations!</b><br><br>
                                                   <b style="text-align: left;">With the information we have gathered, we can advise you that you are eligible to continue with the RPL process.</b><br><br>
                                                   <b style="text-align: left;">Our dedicated member of staff will be in contact with you to further advise how you can proceed.</b><br><br>
-                                                <% } else { %>
-                                                You are <%=type%>
+                                                <!-- <% } else { %>
+                                                You are <%=type%> -->
                                                 <%  } %>    
                                                 <p>Thank you</p>
                                                 <!-- <p style="font-size: 18px">Your lead id is <%=lead_id%></p>
