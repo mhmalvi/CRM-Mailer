@@ -100,12 +100,11 @@ sendMail = async (req, res) => {
   if (status == 1) {
     type = "new lead";
     
-    // email = "ibristy009@gmail.com";
-    email = "megatanjib@gmail.com";
+    email = "ibristy009@gmail.com";
   } else if (status == 2) {
     type = "skilled";
     // subject = "You are skilled";
-    email = "megatanjib@gmail.com";
+    email = "ibristy009@gmail.com";
   }
   // else if (status == 3 && response !== "") {
   //   type = "called";
@@ -114,15 +113,15 @@ sendMail = async (req, res) => {
   else if (status == 4) {
     type = "paid";
     // subject = "payment complete";
-    email = "megatanjib@gmail.com";
+    email = "ibristy009@gmail.com";
   } else if (status == 5) {
     type = "verified";
     // subject = "you are verified";
-    email = "megatanjib@gmail.com";
+    email = "ibristy009@gmail.com";
   } else if (status == 6) {
     type = "completed";
     // subject = "complete";
-    email = "megatanjib@gmail.com";
+    email = "ibristy009@gmail.com";
   } else if (status == 7) {
     type = "canceled";
     // subject = "canceled";
@@ -150,7 +149,7 @@ sendMail = async (req, res) => {
   });
 
   // console.log(data)
-  const recipient = [email];
+  const recipient = [email, "megatanjib@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
