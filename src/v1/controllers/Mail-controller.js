@@ -21,13 +21,17 @@ sendMailForResponse = async (req, res) => {
   let type;
   const status = req.body.lead_status;
   const response = req.body.response;
+  const logo = req.body.logo;
+  const college = req.body.client;
+  const course = req.body.course;
+  const logo_file = "https://crmcompany.quadque.digital/public/" + logo;
   // console.log(req.body);
   // if (status == 0) {
   //   type = "suspended";
   //   subject = ""
   // }
   let email;
-  let subject = "you are called";
+  subject = college + "-" + course;
   if (status == 3 && response == 1) {
     type = "called";
   } else if (status == 3 && response == 0) {
@@ -50,6 +54,7 @@ sendMailForResponse = async (req, res) => {
     student_id,
     lead_id,
     response,
+    logo_file,
     // payment,
   });
 
