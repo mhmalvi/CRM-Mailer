@@ -313,7 +313,7 @@
                                         height: auto;
                                         border: 0;
                                         border-radius: 30px;
-                                        width: 550px;
+                                        width: 274px;
                                         max-width: 75%;
                                       "
                                       width="550"
@@ -346,7 +346,7 @@
                                         height: auto;
                                         border: 0;
                                         border-radius: 30px;
-                                        width: 550px;
+                                        width: 274px;
                                         max-width: 75%;
                                       "
                                       width="550"
@@ -379,7 +379,7 @@
                                         height: auto;
                                         border: 0;
                                         border-radius: 30px;
-                                        width: 550px;
+                                        width: 274px;
                                         max-width: 75%;
                                       "
                                       width="550"
@@ -412,7 +412,7 @@
                                         height: auto;
                                         border: 0;
                                         border-radius: 30px;
-                                        width: 550px;
+                                        width: 274px;
                                         max-width: 75%;
                                       "
                                       width="550"
@@ -445,7 +445,7 @@
                                         height: auto;
                                         border: 0;
                                         border-radius: 30px;
-                                        width: 550px;
+                                        width: 274px;
                                         max-width: 75%;
                                       "
                                       width="550"
@@ -465,7 +465,7 @@
                                         height: auto;
                                         border: 0;
                                         border-radius: 30px;
-                                        width: 550px;
+                                        width: 274px;
                                         max-width: 75%;
                                       "
                                       width="550"
@@ -576,7 +576,7 @@
                                   "
                                 >
                                 <% if(type=="skilled"){ %>
-                                  <h3
+                                  <h5
                                     style="
                                       margin: 0;
                                       color: #555555;
@@ -593,9 +593,9 @@
                                     "
                                   >
                                     <strong>Abilty To Follow The Steps</strong>
-                                  </h3>
-                                  <%}else if(type=="completed"){ %>
-                                    <h3
+                                  </h5>
+                                  <%}else if(type=="new lead"){ %>
+                                    <h5
                                     style="
                                       margin: 0;
                                       color: #555555;
@@ -612,9 +612,9 @@
                                     "
                                   >
                                     <strong>Welocome To <%=college%>.</strong>
-                                  </h3>
+                                  </h5>
                                   <%} else if(type=="completed"){ %>
-                                    <h3
+                                    <h5
                                     style="
                                       margin: 0;
                                       color: #555555;
@@ -631,9 +631,9 @@
                                     "
                                   >
                                     <strong>Congratulation For Successfully Completing <%=course%>.</strong>
-                                  </h3>
-                                  <%} else { %>
-                                    <h3
+                                  </h5>
+                                  <%}else if(type=="paid"){ %>
+                                    <h5
                                     style="
                                       margin: 0;
                                       color: #555555;
@@ -649,8 +649,27 @@
                                       margin-bottom: 0;
                                     "
                                   >
-                                    <!-- <strong>Your are <%= type %></strong> -->
-                                  </h3>
+                                    <strong>Thank You For Completing The Payment.</strong>
+                                  </h5>
+                                  <%} else if(type=="verified"){ %>
+                                    <h5
+                                    style="
+                                      margin: 0;
+                                      color: #555555;
+                                      direction: ltr;
+                                      font-family: Arial, Helvetica Neue,
+                                        Helvetica, sans-serif;
+                                      font-size: 40px;
+                                      font-weight: 400;
+                                      letter-spacing: normal;
+                                      line-height: 120%;
+                                      text-align: center;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <strong>Congratulations ,Your Documents are Verified</strong>
+                                  </h5>
                                   <% } %>
                                 </td>
                               </tr>
@@ -700,7 +719,7 @@
                                         "
                                       >
                                         <span style="font-size: 18px"
-                                          ><p style="text-align: left;">Hi <%=name%>!</p> <% if(type=="paid"){ %> Thank you for your payment. Proceed further.
+                                          ><p style="text-align: left;">Hi <%=name%>!</p> <% if(type=="paid"){ %> <p style="text-align: left;">Thank you for your payment. You are ready proceed into the further steps.</p>
                                             <%} else if(type=="completed"){ %>
                                                 <p style="text-align: left;">We will provide your certificate shortly.
 Congratulations once again and have a good day.</p>
@@ -725,7 +744,7 @@ Congratulations once again and have a good day.</p>
                                                 <% }else if(type == "verified"){%>
                                                   <!-- <p style="text-align: left;">Thank you for your enquiry.</p> -->
 
-<p style="text-align: left;">We have verified you. Please proceed further.</p>
+<p style="text-align: left;">You are documents are verified. We will reach you shortly.</p>
 
 <!-- <p style="text-align: left;">We are excited and looking forward in assisting you with your journey or becoming qualified.</p> -->
 
