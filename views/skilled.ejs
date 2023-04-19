@@ -576,7 +576,7 @@
                                   "
                                 >
                                 <% if(type=="skilled"){ %>
-                                  <h1
+                                  <h3
                                     style="
                                       margin: 0;
                                       color: #555555;
@@ -593,9 +593,9 @@
                                     "
                                   >
                                     <strong>Abilty To Follow The Steps</strong>
-                                  </h1>
+                                  </h3>
                                   <%} else if(type=="completed"){ %>
-                                    <h1
+                                    <h3
                                     style="
                                       margin: 0;
                                       color: #555555;
@@ -612,28 +612,9 @@
                                     "
                                   >
                                     <strong>Congratulation For Successfully Completing <%=course%>.</strong>
-                                  </h1>
-                                  <%}else if(type=='called' && response!==""){ %>
-                                    <h1
-                                    style="
-                                      margin: 0;
-                                      color: #555555;
-                                      direction: ltr;
-                                      font-family: Arial, Helvetica Neue,
-                                        Helvetica, sans-serif;
-                                      font-size: 40px;
-                                      font-weight: 400;
-                                      letter-spacing: normal;
-                                      line-height: 120%;
-                                      text-align: center;
-                                      margin-top: 0;
-                                      margin-bottom: 0;
-                                    "
-                                  >
-                                    <!-- <strong>You are called</strong> -->
-                                  </h1>
-                                  <% } else { %>
-                                    <h1
+                                  </h3>
+                                  <%} else { %>
+                                    <h3
                                     style="
                                       margin: 0;
                                       color: #555555;
@@ -650,7 +631,7 @@
                                     "
                                   >
                                     <!-- <strong>Your are <%= type %></strong> -->
-                                  </h1>
+                                  </h3>
                                   <% } %>
                                 </td>
                               </tr>

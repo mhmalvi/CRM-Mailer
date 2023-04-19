@@ -430,8 +430,8 @@
                                     width: 100%;
                                   "
                                 >
-                                <% if(type=='called' && response===0){ %>
-                                  <h1
+                                <% if(response===0){ %>
+                                  <h3
                                     style="
                                       margin: 0;
                                       color: #555555;
@@ -448,9 +448,9 @@
                                     "
                                   >
                                     <strong>Unable To Reach You</strong>
-                                  </h1>
-                                  <%}  else if(type=='called' && response!==0){ %>
-                                    <h1
+                                  </h3>
+                                  <%}  else if(response!==0){ %>
+                                    <h3
                                     style="
                                       margin: 0;
                                       color: #555555;
@@ -467,7 +467,7 @@
                                     "
                                   >
                                     <strong>Thank You For Your Response</strong>
-                                  </h1>
+                                  </h3>
                                   <% } %>
                                 </td>
                               </tr>
