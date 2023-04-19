@@ -418,6 +418,39 @@
                                       width="550"
                                     />
                                   </div>
+                                  <% }else if(type=="verified"){ %>
+                                    <div
+                                    align="center"
+                                    class="alignment"
+                                    style="line-height: 10px"
+                                  >
+                                    <!-- <img
+                                      class="big"
+                                      src="https://i.ibb.co/vDJnN9Y/3021.jpg"
+                                      style="
+                                        display: block;
+                                        height: auto;
+                                        border: 0;
+                                        border-radius: 30px;
+                                        width: 550px;
+                                        max-width: 75%;
+                                      "
+                                      width="550"
+                                    /> -->
+                                    <img
+                                      class="big"
+                                      src="https://i.ibb.co/pr0F3Zv/verified.png"
+                                      style="
+                                        display: block;
+                                        height: auto;
+                                        border: 0;
+                                        border-radius: 30px;
+                                        width: 550px;
+                                        max-width: 75%;
+                                      "
+                                      width="550"
+                                    />
+                                  </div>
                                   <% }else{ %>
                                     <div
                                     align="center"
@@ -542,7 +575,7 @@
                                     width: 100%;
                                   "
                                 >
-                                <% if(type=="paid"){ %>
+                                <% if(type=="skilled"){ %>
                                   <h1
                                     style="
                                       margin: 0;
@@ -559,7 +592,7 @@
                                       margin-bottom: 0;
                                     "
                                   >
-                                    <!-- <strong>Your Payment Was Successful</strong> -->
+                                    <strong>Abilty To Follow The Steps</strong>
                                   </h1>
                                   <%} else if(type=="completed"){ %>
                                     <h1
@@ -578,9 +611,9 @@
                                       margin-bottom: 0;
                                     "
                                   >
-                                    <!-- <strong>Your registration is complete</strong> -->
+                                    <strong>Congratulation For Successfully Completing <%=course%>.</strong>
                                   </h1>
-                                  <%} else if(type=='called' && response!==""){ %>
+                                  <%}else if(type=='called' && response!==""){ %>
                                     <h1
                                     style="
                                       margin: 0;
@@ -669,7 +702,8 @@
                                         <span style="font-size: 18px"
                                           ><p style="text-align: left;">Hi <%=name%>!</p> <% if(type=="paid"){ %> Thank you for your payment. Proceed further.
                                             <%} else if(type=="completed"){ %>
-                                                <p style="text-align: left;">You will get your certificate shortly</p>
+                                                <p style="text-align: left;">We will provide your certificate shortly.
+Congratulations once again and have a good day.</p>
                                               <%} else if(response == 0){ %>
                                                 <p style="text-align: left;">We haven't found any response from you. Please contact with us.</p>
                                                 <%} else if(response == 1){%>
@@ -677,18 +711,28 @@
                                                 <% }else if(type == "new lead"){%>
                                                   <p style="text-align: left;">Thank you for your enquiry.</p>
 
-<One style="text-align: left;">One of our student education consultants will be in touch with you shortly to further assist you with your enquiry.</p>
+<p style="text-align: left;">One of our student education consultants will be in touch with you shortly to further assist you with your enquiry.</p>
 
-<We style="text-align: left;">We are excited and looking forward in assisting you with your journey or becoming qualified.</p>
+<p style="text-align: left;">We are excited and looking forward in assisting you with your journey or becoming qualified.</p>
 
 
 <!-- <Thank style="text-align: left;">Thank you</p> -->
 
                                                 <%}else if(type=="skilled"){%>
-                                                  <b style="text-align: left;">Congratulations!</b><br><br>
-                                                  <b style="text-align: left;">With the information we have gathered, we can advise you that you are eligible to continue with the RPL process.</b><br><br>
-                                                  <b style="text-align: left;">Our dedicated member of staff will be in contact with you to further advise how you can proceed.</b><br><br>
-                                                <% } else { %>
+                                                  <p style="text-align: left;">Congratulations!</p><br><br>
+                                                  <p style="text-align: left;">With the information we have gathered, we can advise you that you are eligible to continue with the RPL process.</p><br><br>
+                                                  <p style="text-align: left;">Our dedicated member of staff will be in contact with you to further advise how you can proceed.</p><br><br>
+                                                <% }else if(type == "verified"){%>
+                                                  <!-- <p style="text-align: left;">Thank you for your enquiry.</p> -->
+
+<p style="text-align: left;">We have verified you. Please proceed further.</p>
+
+<!-- <p style="text-align: left;">We are excited and looking forward in assisting you with your journey or becoming qualified.</p> -->
+
+
+<!-- <Thank style="text-align: left;">Thank you</p> -->
+
+                                                <%} else { %>
                                                 You are <%=type%>
                                                 <%  } %>    
                                                 <p>Thank you</p>

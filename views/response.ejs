@@ -430,7 +430,7 @@
                                     width: 100%;
                                   "
                                 >
-                                <% if(type=="paid"){ %>
+                                <% if(type=='called' && response===0){ %>
                                   <h1
                                     style="
                                       margin: 0;
@@ -447,9 +447,9 @@
                                       margin-bottom: 0;
                                     "
                                   >
-                                    <strong>Your Payment Was Successful</strong>
+                                    <strong>Unable To Reach You</strong>
                                   </h1>
-                                  <%} else if(type=="completed"){ %>
+                                  <%}  else if(type=='called' && response!==0){ %>
                                     <h1
                                     style="
                                       margin: 0;
@@ -466,26 +466,7 @@
                                       margin-bottom: 0;
                                     "
                                   >
-                                    <strong>Your registration is complete</strong>
-                                  </h1>
-                                  <%} else if(type=='called' && response!==0){ %>
-                                    <h1
-                                    style="
-                                      margin: 0;
-                                      color: #555555;
-                                      direction: ltr;
-                                      font-family: Arial, Helvetica Neue,
-                                        Helvetica, sans-serif;
-                                      font-size: 40px;
-                                      font-weight: 400;
-                                      letter-spacing: normal;
-                                      line-height: 120%;
-                                      text-align: center;
-                                      margin-top: 0;
-                                      margin-bottom: 0;
-                                    "
-                                  >
-                                    <strong>Thank you for your response</strong>
+                                    <strong>Thank You For Your Response</strong>
                                   </h1>
                                   <% } %>
                                 </td>
@@ -536,10 +517,10 @@
                                         "
                                       >
                                         <span style="font-size: 18px"
-                                          >Hi <%=name%>! <% if(response == 1){%>
-                                                  Thank you for your response. Follow the next steps.
+                                          ><p style="text-align: left;">Hi <%=name%>!</p> <% if(response == 1){%>
+                                                  <p style="text-align: left;">Thank you for your response. Follow the next steps.</p>
                                                 <% } else if(response == 0) { %>
-                                                We tried to contact with you but couldn't find any response from you.
+                                                <p style="text-align: left;">Despite our best efforts, we were unable to contact you. Please get in touch with us right away.</p>
                                                 <%  } %> 
                                            <!-- on
                                           <strong>April 04, 2022</strong> 

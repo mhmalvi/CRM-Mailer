@@ -150,6 +150,7 @@ sendMail = async (req, res) => {
     lead_id,
     response,
     logo_file,
+    course
     // payment,
   });
 
