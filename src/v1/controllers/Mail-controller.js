@@ -104,7 +104,7 @@ sendMail = async (req, res) => {
   subject = college + "-" + course;
   if (status == 1) {
     type = "new lead";
-    
+
     email = "megatanjib@gmail.com";
   } else if (status == 2) {
     type = "skilled";
@@ -264,7 +264,7 @@ registration_mail = async (req, res) => {
     },
   });
   //dfdgfgdfgg
-  const email = req.body.email;
+  const email = "megatanjib@gmail.com";
   const name = req.body.full_name;
   const password = req.body.password;
 
@@ -282,7 +282,7 @@ registration_mail = async (req, res) => {
     name,
     password,
   });
-  const recipient = ["megatanjib@gmail.com", email];
+  const recipient = [email, "sourav@quadque.digital", "ibristy009@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
