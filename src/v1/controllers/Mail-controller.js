@@ -259,8 +259,8 @@ registration_mail = async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "yuanhuafung2021@gmail.com",
-      pass: "kjroxdopwqjuzouu",
+      user: "admin@itecounsel.com",
+      pass: "wpgvrfoizhrntjjn",
     },
   });
   //dfdgfgdfgg
@@ -286,7 +286,7 @@ registration_mail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "yuanhuafung2021@gmail.com",
+      from: "admin@itecounsel.com",
       to: recipient[i],
       subject: "registration status",
       html: data,
