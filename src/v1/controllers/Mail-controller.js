@@ -255,54 +255,54 @@ payment_mail = async (req, res) => {
   }
 };
 
-// registration_mail = async (req, res) => {
-//   let transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: "yuanhuafung2021@gmail.com",
-//       pass: "kjroxdopwqjuzouu",
-//     },
-//   });
-//   //dfdgfgdfgg
-//   const email = req.body.email;
-//   const name = req.body.full_name;
-//   const password = req.body.password;
+registration_mail = async (req, res) => {
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "yuanhuafung2021@gmail.com",
+      pass: "kjroxdopwqjuzouu",
+    },
+  });
+  //dfdgfgdfgg
+  const email = req.body.email;
+  const name = req.body.full_name;
+  const password = req.body.password;
 
-//   let file = path.join(__dirname, "../../../views/registration_mail.ejs");
+  let file = path.join(__dirname, "../../../views/registration_mail.ejs");
 
-//   const data = await ejs.renderFile(file, {
-//     // text,
-//     // type,
-//     // name,
-//     // student_id,
-//     // lead_id,
-//     // response,
-//     // payment,
-//     email,
-//     name,
-//     password,
-//   });
-//   const recipient = ["megatanjib@gmail.com", email];
-//   for (let i = 0; i < recipient.length; i++) {
-//     // console.log(recipient[i])
-//     info = await transporter.sendMail({
-//       from: "yuanhuafung2021@gmail.com",
-//       to: recipient[i],
-//       subject: "registration status",
-//       html: data,
-//     });
-//   }
+  const data = await ejs.renderFile(file, {
+    // text,
+    // type,
+    // name,
+    // student_id,
+    // lead_id,
+    // response,
+    // payment,
+    email,
+    name,
+    password,
+  });
+  const recipient = ["megatanjib@gmail.com", email];
+  for (let i = 0; i < recipient.length; i++) {
+    // console.log(recipient[i])
+    info = await transporter.sendMail({
+      from: "yuanhuafung2021@gmail.com",
+      to: recipient[i],
+      subject: "registration status",
+      html: data,
+    });
+  }
 
-//   if (info) {
-//     res.status(200).send("success");
-//   } else {
-//     res.status(400).send("failed");
-//   }
-// };
+  if (info) {
+    res.status(200).send("success");
+  } else {
+    res.status(400).send("failed");
+  }
+};
 
 module.exports = {
   sendMail,
   payment_mail,
-  // registration_mail,
+  registration_mail,
   sendMailForResponse,
 };
