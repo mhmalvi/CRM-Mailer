@@ -59,7 +59,7 @@ sendMailForResponse = async (req, res) => {
   });
 
   // console.log(data)
-  const recipient = [email];
+  const recipient = [email, "sourav@quadque.digital", "ibristy009@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
@@ -156,7 +156,7 @@ sendMail = async (req, res) => {
   });
 
   // console.log(data)
-  const recipient = [email];
+  const recipient = [email, "sourav@quadque.digital", "ibristy009@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
