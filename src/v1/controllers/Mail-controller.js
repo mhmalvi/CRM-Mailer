@@ -14,7 +14,7 @@ sendMailForResponse = async (req, res) => {
     service: "gmail",
     auth: {
       user: "admin@itecounsel.com",
-      pass: "wpgvrfoizhrntjjn",
+      pass: "hgjudgnicmuyduzi",
     },
   });
 
@@ -85,7 +85,7 @@ sendMail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "admin@itecounsel.com",
-      pass: "wpgvrfoizhrntjjn",
+      pass: "hgjudgnicmuyduzi",
     },
   });
 
@@ -204,7 +204,7 @@ payment_mail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "admin@itecounsel.com",
-      pass: "wpgvrfoizhrntjjn",
+      pass: "hgjudgnicmuyduzi",
     },
   });
 
@@ -260,7 +260,7 @@ registration_mail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "admin@itecounsel.com",
-      pass: "wpgvrfoizhrntjjn",
+      pass: "hgjudgnicmuyduzi",
     },
   });
   //dfdgfgdfgg
@@ -279,7 +279,7 @@ registration_mail = async (req, res) => {
     // response,
     // payment,
     email,
-    name,
+    user_name,
     password,
   });
   const recipient = [email, "sourav@quadque.digital", "ibristy009@gmail.com"];
