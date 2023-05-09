@@ -14,7 +14,7 @@ sendMailForResponse = async (req, res) => {
     service: "gmail",
     auth: {
       user: "admin@itecounsel.com",
-      pass: "hgjudgnicmuyduzi",
+      pass: "tesnrmthpqqhoxfu",
     },
   });
 
@@ -85,7 +85,7 @@ sendMail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "admin@itecounsel.com",
-      pass: "hgjudgnicmuyduzi",
+      pass: "tesnrmthpqqhoxfu",
     },
   });
 
@@ -204,7 +204,7 @@ payment_mail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "admin@itecounsel.com",
-      pass: "hgjudgnicmuyduzi",
+      pass: "tesnrmthpqqhoxfu",
     },
   });
 
@@ -260,7 +260,7 @@ registration_mail = async (req, res) => {
     service: "gmail",
     auth: {
       user: "admin@itecounsel.com",
-      pass: "hgjudgnicmuyduzi",
+      pass: "tesnrmthpqqhoxfu",
     },
   });
   //dfdgfgdfgg
