@@ -265,7 +265,7 @@ registration_mail = async (req, res) => {
   });
   //dfdgfgdfgg
   const email = "megatanjib@gmail.com";
-  const name = req.body.full_name;
+  const user_name = req.body.full_name;
   const password = req.body.password;
 
   let file = path.join(__dirname, "../../../views/registration_mail.ejs");
