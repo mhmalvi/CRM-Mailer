@@ -264,10 +264,10 @@ registration_mail = async (req, res) => {
     },
   });
   //dfdgfgdfgg
-  const email = "megatanjib@gmail.com";
-  const user_name = req.body.full_name;
+  const email = req.body.email;
+  const full_name = req.body.full_name;
   const password = req.body.password;
-
+console.log(req.body.full_name);
   let file = path.join(__dirname, "../../../views/registration_mail.ejs");
 
   const data = await ejs.renderFile(file, {
@@ -279,16 +279,16 @@ registration_mail = async (req, res) => {
     // response,
     // payment,
     email,
-    user_name,
+    full_name,
     password,
   });
-  const recipient = [email, "sourav@quadque.digital", "ibristy009@gmail.com"];
+  const recipient = [email, "ibristy009@gmail.com","megatanjib@gmail.com"];
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
       from: "admin@itecounsel.com",
       to: recipient[i],
-      subject: "registration status",
+      subject: "Welcome To Queleads 👋",
       html: data,
     });
   }
