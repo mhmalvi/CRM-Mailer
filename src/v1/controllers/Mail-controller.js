@@ -13,7 +13,7 @@ sendMailForResponse = async (req, res) => {
     secure: true,
     service: "gmail",
     auth: {
-      user: "admin@itecounsel.com",
+      user: "crm@itecounsel.com",
       pass: "oihlchwfqyjisevu",
     },
   });
@@ -63,7 +63,7 @@ sendMailForResponse = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "admin@itecounsel.com",
+      from: "crm@itecounsel.com",
       to: recipient[i],
       subject: subject,
       html: data,
@@ -84,7 +84,7 @@ sendMail = async (req, res) => {
     secure: true,
     service: "gmail",
     auth: {
-      user: "admin@itecounsel.com",
+      user: "crm@itecounsel.com",
       pass: "oihlchwfqyjisevu",
     },
   });
@@ -160,7 +160,7 @@ sendMail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "admin@itecounsel.com",
+      from: "crm@itecounsel.com",
       to: recipient[i],
       subject: subject,
       html: data,
@@ -203,7 +203,7 @@ payment_mail = async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "admin@itecounsel.com",
+      user: "crm@itecounsel.com",
       pass: "oihlchwfqyjisevu",
     },
   });
@@ -241,7 +241,7 @@ payment_mail = async (req, res) => {
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "admin@itecounsel.com",
+      from: "crm@itecounsel.com",
       to: recipient[i],
       subject: "payment complete",
       html: data,
@@ -259,7 +259,7 @@ registration_mail = async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "admin@itecounsel.com",
+      user: "crm@itecounsel.com",
       pass: "oihlchwfqyjisevu",
     },
   });
@@ -286,7 +286,7 @@ console.log(req.body.full_name);
   for (let i = 0; i < recipient.length; i++) {
     // console.log(recipient[i])
     info = await transporter.sendMail({
-      from: "admin@itecounsel.com",
+      from: "crm@itecounsel.com",
       to: recipient[i],
       subject: "Welcome To Queleads 👋",
       html: data,
