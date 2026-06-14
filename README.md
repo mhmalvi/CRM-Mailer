@@ -1,3 +1,6 @@
+<!-- repo-card -->
+![CRM-Mailer](docs/assets/social-card.png)
+
 # CRM Mailer Service
 
 An email marketing and transactional mail microservice within the CRM ecosystem that handles lead lifecycle emails, payment confirmations, and user registration notifications. Built with EJS templates and Nodemailer, this service delivers professionally branded emails triggered by CRM events.
